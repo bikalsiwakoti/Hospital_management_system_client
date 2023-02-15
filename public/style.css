@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+:root {
+  --background-color: rgb(99, 189, 219);
+  --text-light-color: rgba(94, 104, 135, 0.897);
+}
+
+html {
+  font-size: 62.5%;
+}

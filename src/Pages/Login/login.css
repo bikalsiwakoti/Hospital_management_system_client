@@ -1,0 +1,119 @@
+.loginContainer {
+  width: 65vw;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.08);
+  margin: 3rem auto;
+  border-radius: 1rem;
+  position: relative;
+}
+
+.leftLogin {
+  margin: 20px 50px;
+}
+
+a {
+  width: fit-content;
+}
+
+.leftp {
+  font-size: 3.5rem;
+  font-weight: 30rem;
+  letter-spacing: 0.3rem;
+  color: var(--text-light-color);
+
+}
+
+.leftp-1 {
+  font-size: 3rem;
+  letter-spacing: 0.4rem;
+  color: var(--background-color);
+}
+
+.leftp-2 {
+  font-size: 1.5rem;
+  color: var(--text-light-color);
+
+}
+
+img {
+  height: 40vh;
+  width: 27vw;
+}
+
+.para {
+  margin: 1.4rem 0;
+}
+
+.loginLine {
+  height: 1rem;
+  width: 100%;
+  background-color: var(--background-color);
+  position: absolute;
+  bottom: 0;
+}
+
+
+.rightLogin {
+  text-align: center;
+}
+
+.login-buttons {
+  display: flex;
+  justify-content: center;
+  margin: 0 0.5rem;
+}
+
+.login-buttons button {
+  margin: 0.5rem;
+  font-size: 1.5rem;
+  width: 10vw;
+  padding: 1rem;
+}
+
+.rememberForget {
+  display: flex;
+  width: 20vh;
+  margin-left: 2vh;
+  align-items: center;
+  color: var(--text-light-color);
+}
+
+form .dbl-field {
+  margin-bottom: 1.5rem;
+}
+
+.dbl-field .field {
+  height: 5rem;
+  display: flex;
+  width: 60vh;
+  margin-bottom: 2vh;
+  /* margin-left: 8vh; */
+}
+
+form .field input {
+  width: 80%;
+  height: 100%;
+  outline: none;
+  font-size: 1.8rem;
+  border-radius: 1px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  resize: none;
+  margin: auto;
+}
+
+.leftp-1,
+.leftp-2 {
+  margin-bottom: 3vh;
+}
+
+form .field input:focus {
+  border-bottom: 1px solid var(--background-color);
+}
+
+.rememberForget {
+  margin-bottom: 2vh;
+}
