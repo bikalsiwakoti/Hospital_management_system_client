@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Navbar from '../../Components/navbar/Navbar'
+// import Navbar from '../../Components/navbar/Navbar'
 import './register.css'
 import loginPic from '../.././img/loginPic.jpg'
 import { Link } from 'react-router-dom';
@@ -13,7 +13,7 @@ const RegisterPage = () => {
 
   return (
     <>
-        <Navbar />
+        {/* <Navbar /> */}
         <div className='loginContainer'>
           <div className='leftLogin'>
             <div className='leftp para'>

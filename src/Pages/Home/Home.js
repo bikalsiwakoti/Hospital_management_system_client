@@ -1,8 +1,13 @@
+import DoctorSlider from '../../Components/doctorSlider/DoctorSlider'
+import ProductSlider from '../../Components/productSlider/ProductSlider'
 import './home.css'
 
 function Home() {
   return (
-    <div>Home</div>
+    <>
+      <ProductSlider />
+      <DoctorSlider />
+    </>
   )
 }
 

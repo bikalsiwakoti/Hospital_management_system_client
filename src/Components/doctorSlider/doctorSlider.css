@@ -1,0 +1,30 @@
+.doctor{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 0.5rem;
+    margin: 1rem;
+}
+
+.doctor img{
+    height: 25rem;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.doctor h5{
+    font-size: 1.9rem;
+    margin-bottom: 0.7rem;
+}
+
+
+.doctor p{
+    font-size: 1.4rem;
+    margin-bottom: 0.7rem;
+}
+
+.doctor button {
+    font-size: 1.5rem;
+}
+
+.doctor button span{
+    margin-right: 0.5rem;
+}

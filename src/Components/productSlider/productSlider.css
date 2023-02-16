@@ -1,0 +1,14 @@
+.product{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.product img{
+    height: 30rem;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.product h5{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
