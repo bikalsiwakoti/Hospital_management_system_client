@@ -1,0 +1,20 @@
+footer p {
+    cursor: pointer;
+}
+
+footer strong{
+    font-size: 1.7rem !important;
+}
+
+.footer-col a, .footer-col p {
+    color: #808080 !important;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+@media only screen and (max-width: 1000px) {
+    footer .footer-col {
+        text-align: left;
+    }
+}

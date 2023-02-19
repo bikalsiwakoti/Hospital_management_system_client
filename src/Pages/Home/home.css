@@ -2,8 +2,22 @@
     font-size: 3rem;
     margin-bottom: 2rem;
     color: #09125f;
+    position: relative;
+    width: fit-content;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.header::after{
+    position: absolute;
+    content: "";
+    height: 3px;
+    width: 30%;
+    background-color: #e61818;
+    bottom: -1rem;
+    right: 0%;
 }
 
 .container{
     margin-bottom: 4rem;
 }
+

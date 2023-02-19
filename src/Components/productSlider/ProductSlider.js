@@ -17,8 +17,8 @@ export default function ProductSlider() {
             <div className="product-slider container">
                 <h2 className="header">Our Products</h2>
                 <Swiper
-                    spaceBetween={50}
-                    slidesPerView={3}
+                    spaceBetween={40}
+                    slidesPerView={4}
                     navigation={true}
                     modules={[Navigation]}
                     breakpoints={{
@@ -35,7 +35,7 @@ export default function ProductSlider() {
                             spaceBetween: 40,
                         },
                         1024: {
-                            slidesPerView: 3,
+                            slidesPerView: 4,
                             spaceBetween: 50,
                         },
                     }}
@@ -45,7 +45,7 @@ export default function ProductSlider() {
                             <img className="img-fluid w-100 rounded-2" src="https://cdn.shopify.com/s/files/1/0841/3619/products/Single_Dose_Liquid_Medicine_Bottles_Food_Allergy_Superheroes_1.jpg?v=1557165495" alt="img" />
                             <p className="fs-4 text-secondary-emphasis mb-2 px-3">Medicine</p>
                             <h5 className="px-3">Nrs 590</h5>
-                            <button className="btn btn-lg w-100 py-3 fs-3 btn-primary">Buy Now</button>
+                            <button className="btn btn-lg w-100 py-2 fs-3 btn-primary">Buy Now</button>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
@@ -53,7 +53,7 @@ export default function ProductSlider() {
                             <img className="img-fluid w-100 rounded-2" src="https://cdn.shopify.com/s/files/1/0841/3619/products/Single_Dose_Liquid_Medicine_Bottles_Food_Allergy_Superheroes_1.jpg?v=1557165495" alt="img" />
                             <p className="fs-4 text-secondary-emphasis mb-2 px-3">Medicine</p>
                             <h5 className="px-3">Nrs 590</h5>
-                            <button className="btn btn-lg w-100 py-3 fs-3 btn-primary">Buy Now</button>
+                            <button className="btn btn-lg w-100 py-2 fs-3 btn-primary">Buy Now</button>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
@@ -61,7 +61,7 @@ export default function ProductSlider() {
                             <img className="img-fluid w-100 rounded-2" src="https://cdn.shopify.com/s/files/1/0841/3619/products/Single_Dose_Liquid_Medicine_Bottles_Food_Allergy_Superheroes_1.jpg?v=1557165495" alt="img" />
                             <p className="fs-4 text-secondary-emphasis mb-2 px-3">Medicine</p>
                             <h5 className="px-3">Nrs 590</h5>
-                            <button className="btn btn-lg w-100 py-3 fs-3 btn-primary">Buy Now</button>
+                            <button className="btn btn-lg w-100 py-2 fs-3 btn-primary">Buy Now</button>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
@@ -69,7 +69,23 @@ export default function ProductSlider() {
                             <img className="img-fluid w-100 rounded-2" src="https://cdn.shopify.com/s/files/1/0841/3619/products/Single_Dose_Liquid_Medicine_Bottles_Food_Allergy_Superheroes_1.jpg?v=1557165495" alt="img" />
                             <p className="fs-4 text-secondary-emphasis mb-2 px-3">Medicine</p>
                             <h5 className="px-3">Nrs 590</h5>
-                            <button className="btn btn-lg w-100 py-3 fs-3 btn-primary">Buy Now</button>
+                            <button className="btn btn-lg w-100 py-2 fs-3 btn-primary">Buy Now</button>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="product">
+                            <img className="img-fluid w-100 rounded-2" src="https://cdn.shopify.com/s/files/1/0841/3619/products/Single_Dose_Liquid_Medicine_Bottles_Food_Allergy_Superheroes_1.jpg?v=1557165495" alt="img" />
+                            <p className="fs-4 text-secondary-emphasis mb-2 px-3">Medicine</p>
+                            <h5 className="px-3">Nrs 590</h5>
+                            <button className="btn btn-lg w-100 py-2 fs-3 btn-primary">Buy Now</button>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="product">
+                            <img className="img-fluid w-100 rounded-2" src="https://cdn.shopify.com/s/files/1/0841/3619/products/Single_Dose_Liquid_Medicine_Bottles_Food_Allergy_Superheroes_1.jpg?v=1557165495" alt="img" />
+                            <p className="fs-4 text-secondary-emphasis mb-2 px-3">Medicine</p>
+                            <h5 className="px-3">Nrs 590</h5>
+                            <button className="btn btn-lg w-100 py-2 fs-3 btn-primary">Buy Now</button>
                         </div>
                     </SwiperSlide>
                     ...

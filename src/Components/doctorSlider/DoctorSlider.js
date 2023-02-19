@@ -17,7 +17,7 @@ export default function DoctorSlider() {
             <div className="doctor-slider container">
                 <h2 className="header">Our doctors</h2>
                 <Swiper
-                    spaceBetween={50}
+                    spaceBetween={40}
                     slidesPerView={3}
                     navigation={true}
                     modules={[Navigation]}
@@ -36,7 +36,7 @@ export default function DoctorSlider() {
                         },
                         1024: {
                             slidesPerView: 3,
-                            spaceBetween: 50,
+                            spaceBetween: 40,
                         },
                     }}
                 >
