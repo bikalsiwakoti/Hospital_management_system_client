@@ -4,6 +4,9 @@ import './register.css'
 import loginPic from '../.././img/loginPic.jpg'
 import { Link } from 'react-router-dom';
 
+import Footer from '../../Components/footer/Footer'
+import Navbar from '../../Components/navbar/Navbar'
+
 const RegisterPage = () => {
   // const [passwordVisible, setPasswordVisible] = useState(false);
 
@@ -13,7 +16,7 @@ const RegisterPage = () => {
 
   return (
     <>
-        {/* <Navbar /> */}
+        <Navbar />
         <div className='loginContainer'>
           <div className='leftLogin'>
             <div className='leftp para'>
@@ -41,14 +44,14 @@ const RegisterPage = () => {
             <form>
               <div class="dbl-field">
 
-                <div class="flex-input">
+                {/* <div class="flex-input">
                   <div class="field">
                     <input type="text" placeholder="First Name"></input>
                   </div>
                   <div class="field">
                     <input type="text" id="lastName" placeholder="Last Name"></input>
                   </div>
-                </div>
+                </div> */}
 
 
                 <div class="field">
@@ -77,8 +80,8 @@ const RegisterPage = () => {
                 <label for='check'>Remember Me</label>
               </div>
               <div className='login-buttons'>
-                <button type="button" class="btn btn-info">Signup</button>
-                <Link to={'/login'}><button type="button" class="btn btn-outline-info">Login</button></Link>
+                <button type="button" class="btn btn-danger">Signup</button>
+                <Link to={'/login'}><button type="button" class="btn btn-outline-danger">Login</button></Link>
               </div>
             </form>
 
@@ -91,6 +94,7 @@ const RegisterPage = () => {
 
           </div>
         </div>
+        <Footer/>
     </>
   );
 };

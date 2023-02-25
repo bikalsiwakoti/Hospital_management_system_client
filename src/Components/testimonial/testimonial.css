@@ -1,13 +1,13 @@
 /* Testimonial Card */
 .testimonial-card {
     overflow: hidden;
-    padding: 2rem 1.5rem;
+    padding: 1.8rem 1.5rem;
     box-sizing: border-box;
     box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.1);
     position: relative;
 }
 .testimonial-card p {
-    font-size: 13.7px;
+    font-size: 1.3rem;
 }
 
 

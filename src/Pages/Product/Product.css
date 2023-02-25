@@ -1,0 +1,43 @@
+.product-menu {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.productsCard {
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+.product-right {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.product-right span {
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+
+.product-top {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 90%;
+  margin: auto;
+}
+
+.product-left{
+  width: 80%;
+}
+.srchBtn {
+  width: 50px;
+}
+.leftInput {
+  height: 40px;
+}

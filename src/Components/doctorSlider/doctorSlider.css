@@ -4,9 +4,12 @@
     margin: 1rem;
 }
 
+
+
 .doctor img{
-    height: 25rem;
-    object-fit: cover;
+    height: 20rem;
+    object-fit: contain;
+    width: 100%;
     margin-bottom: 1rem;
 }
 
@@ -21,8 +24,14 @@
     margin-bottom: 0.7rem;
 }
 
+.doctorStar {
+    margin: 0 1rem;
+}
+
 .doctor button {
     font-size: 1.5rem;
+    width: 70%;
+    margin: 1rem 1rem;
 }
 
 .doctor button span{

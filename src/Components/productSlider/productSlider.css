@@ -1,14 +1,34 @@
-.product{
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+.productSliderCard {
+    width: 23rem;
+    height: 30rem;
+    border: 1px solid lightgray;
+    margin: 5px;
+    border-radius: 1rem;
+    overflow: hidden;
 }
 
-.product img{
-    height: 17rem;
+.productSliderCard:hover {
+    box-shadow: rgba(149, 157, 164, 0.2) 0px 8px 24px;
+}
+
+.productSliderCard img {
+    width: 100%;
+    height: 45%;
     object-fit: cover;
-    margin-bottom: 1rem;
 }
 
-.product h5{
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
+.productSliderCard .info {
+    padding: 5px;
 }
+
+@media screen and (max-width: 700px) {
+    .productSliderCard {
+        width: 100%;
+        height: 30rem;
+        border: 1px solid lightgray;
+        margin: 5px;
+        border-radius: 1rem;
+        overflow: hidden;
+    }
+  }
+

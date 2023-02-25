@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import './login.css'
 import loginPic from '../.././img/loginPic.jpg'
 import { Link } from 'react-router-dom';
+import Footer from '../../Components/footer/Footer'
+import Navbar from '../../Components/navbar/Navbar'
 
 const LoginPage = () => {
   // const [passwordVisible, setPasswordVisible] = useState(false);
@@ -16,7 +18,7 @@ const LoginPage = () => {
   return (
     <>
       <div>
-        {/* <Navbar /> */}
+        <Navbar />
         <div className='loginContainer'>
           <div className='leftLogin'>
             <div className='leftp para'>
@@ -55,8 +57,8 @@ const LoginPage = () => {
                 <label for='check'>Remember Me</label>
               </div>
               <div className='login-buttons'>
-                <button type="button" class="btn btn-info">Login</button>
-                <Link to={'/register'}><button type="button" class="btn btn-outline-info">Signup</button></Link>
+                <button type="button" class="btn btn-danger">Login</button>
+                <Link to={'/register'}><button type="button" class="btn btn-outline-danger">Signup</button></Link>
               </div>
             </form>
 
@@ -70,6 +72,7 @@ const LoginPage = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 };

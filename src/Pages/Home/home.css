@@ -1,23 +1,200 @@
 .header {
-    font-size: 3rem;
+    font-size: 2rem;
     margin-bottom: 2rem;
-    color: #09125f;
+    color: #000000;
     position: relative;
     width: fit-content;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.total-slider{
+    background-color: var(--grey-bg);
+    padding: 1.5rem;
 }
 
-.header::after{
+.header::after {
     position: absolute;
     content: "";
     height: 3px;
     width: 30%;
-    background-color: #e61818;
+    background-color: var(--btn-color);
     bottom: -1rem;
     right: 0%;
 }
 
-.container{
-    margin-bottom: 4rem;
+.container {
+    margin-bottom: 2rem;
 }
 
+
+.hero {
+    width: 100%;
+    height: 80vh;
+    background-color: rgb(11, 123, 162);
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+
+.rightHero img {
+    width: 500px;
+    height: 500px;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+}
+
+.rightHero {
+    flex: 1;
+}
+
+.leftHero {
+    flex: 1;
+    margin: 130px;
+}
+
+.leftHero h1 {
+    font-size: 5rem;
+}
+
+.leftHero p {
+    font-size: 2rem;
+}
+
+.leftHero form {
+    width: 100%;
+    position: relative;
+}
+
+.leftHero input {
+    width: 75%;
+    padding: 0 30px;
+    border-radius: 20px;
+    border: none;
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: capitalize;
+    position: relative;
+    color: rgba(10, 6, 6, 0.747);
+    height: 55px;
+    outline: none;
+}
+
+.leftHero form button {
+    position: absolute;
+    right: 25%;
+    height: 100%;
+    border: none;
+    color: white;
+    background-color: var(--btn-color);
+    top: 0;
+    border-radius: 0 20px 20px 0;
+    width: 70px;
+}
+
+.btn {
+    padding: 2rem;
+    background-color: var(--btn-color);
+}
+.srchBtn i {
+    font-size: 2rem;
+}
+.heroBtn {
+    width: 30%;
+    height: 7vh;
+    position: relative;
+}
+
+.heroBtn span {
+    font-size: 2rem;
+    position: absolute;
+    left: 1rem;
+    top: 0.8rem;
+}
+
+.heathPartner {
+    width: 100%;
+    height: 25vh;
+    background-color: rgb(48, 54, 57);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.heathPartner h1 {
+    font-size: 4rem;
+    color: white;
+}
+
+.doctorBtn span {
+    font-size: 1.7rem;
+}
+
+.topicCointainer{
+    display: flex;
+    width: 99%;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+}
+.heading h2 {
+    font-size: 3rem;
+    font-weight: 400;
+}
+.heading p {
+    font-size: 1.3rem;
+    color: rgb(145, 142, 142);
+}
+
+@media screen and (max-width: 800px) {
+    .rightHero {
+        display: none;
+    }
+
+    .leftHero {
+        flex: 4;
+        margin: 50px;
+
+    }
+
+    .leftHero h1 {
+        font-size: 3rem;
+    }
+
+    .leftHero p {
+        font-size: 1.5rem;
+    }
+
+    .hero {
+        height: 40vh;
+        justify-content: left;
+
+    }
+
+    .leftHero input {
+        width: 80%;
+        /* padding: 0 30px;
+        border-radius: 20px;
+        border: none;
+        font-weight: 600;
+        font-size: 16px;
+        text-transform: capitalize;
+        position: relative;
+        color: rgba(10, 6, 6, 0.747);
+        height: 55px;
+        outline: none; */
+    }
+
+    .leftHero form button {
+        right: 20%;
+        width: 40px;
+    }
+    .heroBtn span{
+        font-size: 1.4rem;
+    }
+    .heroBtn {
+        width: 40%;
+        height: 5vh;
+    }
+}

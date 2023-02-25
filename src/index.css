@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+:root {
+  --background-color: rgba(245, 33, 79, 0.877);
+  --text-light-color: rgba(94, 104, 135, 0.897);
+  --btn-color: rgba(245, 33, 79, 0.877);
+  --grey-bg: #a7a7a821;
+
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.rememberForget{
+  margin-left: 40px;
+}
+/* .header {
+  width: 100%;
+  margin: auto;
+} */
+
+select{
+  outline: none;
+}
