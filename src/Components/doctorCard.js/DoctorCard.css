@@ -1,39 +1,45 @@
-.doctor{
+.doctor-card{
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   padding: 0.5rem;
-  margin: 1rem;
-  width: 300px;
+  /* margin: 1rem; */
+  width: 48%;
+  padding: 10px;
 }
 
-/* .doctorDecs
+/* .doctor-cardDecs
 {
   display: flex;
 } */
 
-.doctor img{
-  height: 25rem;
+.doctor-card img{
+  height: 100%;
   object-fit: cover;
-  width: 100%;
+  width: 95%;
   margin-bottom: 1rem;
+  border-radius: 50%;
 }
 
-.doctor h5{
+.doctor-card h5{
   font-size: 1.9rem;
   margin-bottom: 0.7rem;
 }
 
 
-.doctor p{
+.doctor-card p{
   font-size: 1.4rem;
   margin-bottom: 0.7rem;
 }
 
-.doctor button {
+.doctor-card button:first-child {
   font-size: 1.5rem;
-  width: 45%;
+  width: 36%;
+}
+.doctor-card button:last-child {
+  font-size: 1.5rem;
+  width: 63%;
 }
 
-.doctor button span{
+.doctor-card button span{
   margin-right: 0.5rem;
 }
 .btnDoc{
@@ -41,3 +47,71 @@
   justify-content: space-between;
 }
 
+
+.detailsDoctor {
+  display: flex;
+  align-items: center;
+}
+
+.detailsDoctor i {
+  color: var(--btn-color);
+  font-size: 1.3rem;
+}
+
+
+.detailsDoctor h5, .detailsDoctor p{
+  margin-left: 5px;
+}
+
+.doctorSchedule{
+  display: flex;
+}
+
+.doctorScheduleLeft {
+  flex: 1;
+}
+.doctorScheduleRight {
+  flex: 2;
+  background-color: rgb(245,244,244) ;
+  border-radius: 5px;
+}
+
+.detailsFlex{
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+}
+
+.doctorCardStar{
+  position: absolute;
+  right: 0;
+  font-size: 3rem;
+}
+
+.table td button {
+  outline: none;
+  background-color: rgb(119,118,118);
+  width: 100%;
+  margin: 2px;
+  border: 1px solid rgb(119,118,118);
+  color: white;
+  border-radius: 3px;
+  font-size: 1.4rem;
+  flex: 1;
+}
+
+.table td button:hover{
+  background-color: rgba(119, 118, 118, 0.728);
+  border: 1px solid rgba(119, 118, 118, 0.728);
+
+}
+
+thead th {
+  font-size: 1.6rem;
+}
+
+tbody th {
+  font-size: 1.3rem;
+}

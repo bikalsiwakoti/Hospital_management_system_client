@@ -15,14 +15,6 @@ function ProductCard() {
               <span></span>
             </div>
             <p>description</p>
-            <div className='star'>
-              <i class='bx bxs-star'></i>
-              <i class='bx bxs-star'></i>
-              <i class='bx bxs-star'></i>
-              <i class='bx bxs-star'></i>
-              <i class='bx bxs-star'></i>
-              <span>5</span>
-            </div>
           </div>
           <hr />
         </Link>

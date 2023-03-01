@@ -2,11 +2,43 @@ import React, { useState } from 'react';
 // import Navbar from '../../Components/navbar/Navbar'
 import './login.css'
 import loginPic from '../.././img/loginPic.jpg'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Footer from '../../Components/footer/Footer'
 import Navbar from '../../Components/navbar/Navbar'
+import axios from 'axios';
+import { useSelector, useDispatch } from 'react-redux'
+import {LoginStart, LoginSuccess, LoginFailed, Logout} from '../.././Redux/Slices.js/UserSlice'
 
 const LoginPage = () => {
+  const user = useSelector(state=>state?.user)
+  const dispatch = useDispatch()
+
+
+  const navigate = useNavigate()
+  const [loginData, setLoginData] = useState({
+    username: "",
+    password: "",
+  })
+
+  const handleChange = (e) => {
+    setLoginData(prev => ({ ...prev, [e.target.name]: e.target.value }))
+  }
+
+  const handleLogin = async(e) => {
+    e.preventDefault()
+    try {
+      dispatch(LoginStart())
+      const res = await axios.post('/user/loginUser', loginData)
+      localStorage.setItem('loginDetails', JSON.stringify(res?.data))
+      dispatch(LoginSuccess(res?.data))
+      navigate('/')
+      
+    } catch (error) {
+      console.log(error)
+      dispatch(LoginFailed(error?.response?.data?.message))
+    }
+  }
+  console.log(user)
   // const [passwordVisible, setPasswordVisible] = useState(false);
   // const [username, setUsername] = useState('');
   // const [password, setPassword] = useState('');
@@ -43,21 +75,22 @@ const LoginPage = () => {
             <div className='rightp-1  leftp-2'>
               Welcome back! please login to your account.
             </div>
-            <form>
+            <form onSubmit={handleLogin}>
               <div class="dbl-field">
                 <div class="field">
-                  <input type="text" placeholder="Username"></input>
+                  <input type="text" name='username' onChange={handleChange} placeholder="Username"></input>
                 </div>
                 <div class="field">
-                  <input type="password" id="password" placeholder="Password"></input>
+                  <input type="password" name='password' id="password" onChange={handleChange} placeholder="Password"></input>
                 </div>
               </div>
               <div className='rememberForget'>
                 <input type='checkbox' id='check'></input>
                 <label for='check'>Remember Me</label>
               </div>
+              <div>{user?.error}</div>
               <div className='login-buttons'>
-                <button type="button" class="btn btn-danger">Login</button>
+                <button type="submit" class="btn btn-danger">Login</button>
                 <Link to={'/register'}><button type="button" class="btn btn-outline-danger">Signup</button></Link>
               </div>
             </form>
@@ -72,7 +105,7 @@ const LoginPage = () => {
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };
