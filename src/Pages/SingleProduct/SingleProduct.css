@@ -1,7 +1,44 @@
 .sproduct {
-  margin-left: 20rem;
+  /* margin-left: 50rem; */
+  width: 80%;
+  margin: auto;
 }
 
 /* .sproduct img{
   border-radius: 2px;
 } */
+
+
+.counter {
+  display: flex;
+  width: 35%;
+
+}
+
+.addtocartbtn {
+  text-align: right;
+}
+
+.insideProduct {
+  display: flex;
+  justify-content: space-around;
+}
+
+.imgPart {
+  flex: 1;
+}
+
+.desPart {
+  flex: 3;
+}
+
+
+@media screen and (max-width: 900px) {
+  .insideProduct {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .desPart{
+    margin-top: 2rem;
+  }
+}

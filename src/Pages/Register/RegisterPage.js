@@ -26,7 +26,7 @@ const RegisterPage = () => {
     e.preventDefault()
     try {
       await axios.post('/user/registerUser', registerData)
-      navigate('/login')
+      navigate('/')
       
     } catch (error) {
       setError(error.response.data)
@@ -98,7 +98,7 @@ const RegisterPage = () => {
             </div>
             <div className='login-buttons'>
               <button type="submit" class="btn btn-danger">Signup</button>
-              <Link to={'/login'}><button type="button" class="btn btn-outline-danger">Login</button></Link>
+              <Link to={'/'}><button type="button" class="btn btn-outline-danger">Login</button></Link>
             </div>
           </form>
 

@@ -2,8 +2,19 @@ import './Product.css'
 import ProductCard from '../../Components/productCard/ProductCard'
 import Footer from '../../Components/footer/Footer'
 import Navbar from '../../Components/navbar/Navbar'
+import { fetchData } from '../../Redux/Slices.js/ProductSlice'
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
 function Product() {
+  const dispatch = useDispatch()
+  const productData = useSelector(state => state.product)
+
+  useEffect(() => {
+    dispatch(fetchData())
+  }, [])
+
+  console.log(productData.data)
   return (
     <>
       <Navbar />
@@ -36,18 +47,9 @@ function Product() {
         </div>
 
         <div className='productsCard'>
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
+          {productData.data.map((item,i)=>{
+            return <ProductCard data={item}/>
+          })}
         </div>
 
       </div>

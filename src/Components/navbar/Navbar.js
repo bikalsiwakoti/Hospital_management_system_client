@@ -2,9 +2,15 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { MenuList } from "./MenuList";
 import "./navbar.css";
+import { useSelector, useDispatch } from 'react-redux'
+
 
 function Navbar() {
   const [clicked, setClicked] = useState(false);
+  const user = useSelector(state=>state?.user)
+  const dispatch = useDispatch()
+
+
   const menuList = MenuList.map(({ url, title }, index) => {
     return (
       <li key={index} className="navLinks">

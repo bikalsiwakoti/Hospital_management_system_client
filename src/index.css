@@ -26,3 +26,7 @@ html {
 select{
   outline: none;
 }
+
+.btn {
+  outline: none;
+}

@@ -9,7 +9,8 @@
   width: 90%;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin: auto;
+  /* margin: auto; */
+  /* margin: 30px; */
 }
 
 .product-right {
