@@ -1,0 +1,30 @@
+.checkoutall{ 
+  font-size: 2.2rem;
+}
+
+.checkoutall label, .checkoutall span {
+  font-size: 1.8rem;
+
+}
+
+.checkoutall span {
+  font-size: 1.5rem;
+
+}
+
+.checkoutbtn button {
+  border: none;
+  font-size: 1.6rem;
+  padding: 1rem 3rem;
+  color: #fff;
+  background-color: #349bf3;
+  text-transform: uppercase;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+.checkoutbtn button:hover {
+  background-color: #0077dc;
+}

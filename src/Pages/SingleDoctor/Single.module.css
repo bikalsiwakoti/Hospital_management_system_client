@@ -1,0 +1,362 @@
+body{
+  font-size: 100% !important;
+}
+
+.appointment {
+  height: auto;
+  width: 100%;
+  display: flex;
+  padding-bottom: 2.3rem;
+  justify-content: space-between;
+}
+
+section {
+  margin-top: 0rem;
+}
+
+.main {
+  padding: 0rem 0rem 0rem 2.8rem;
+  margin-top: 2.5rem;
+}
+
+.main .mainHeader {
+  color: #0D0D0D;
+  font-family: Poppins;
+  font-size: 1.9rem;
+  font-weight: 600;
+  line-height: 26px;
+  text-align: left;
+  margin-bottom: 1.3rem;
+}
+
+.main .mainP {
+  font-family: Poppins;
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 24px;
+  color: #808080;
+}
+
+.form {
+  width: 60%;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 1rem;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.button:hover {
+  transform: scale(1.03);
+}
+
+.doctorCard {
+  width: 33.25rem;
+  height: 42.6rem;
+  border: 1px solid #D6D6D6;
+  border-radius: 10px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.doctorCard header {
+  width: 100%;
+  background-color: #144580;
+  height: 3.9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.doctorCard .doctorCardHeader h1 {
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 30px;
+}
+
+.imgDiv {
+  display: flex;
+  justify-content: center;
+}
+
+.doctorImage {
+  width: 13.5rem;
+  height: 14rem;
+  margin: 1rem 0;
+}
+
+.doctorCard .info {
+  padding: 1rem 1.5rem;
+}
+
+.info p {
+  color: #808080;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 24px;
+  margin-bottom: 10px;
+}
+
+.info p span {
+  color: #EF481E;
+  padding-right: 6px;
+}
+
+.star {
+  color: #C63535;
+}
+
+
+.label {
+  color: #808080;
+  font-size: 1.5rem;
+  padding-bottom: 0.5rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.7px;
+}
+
+.select {
+  width: 24rem;
+  height: 50px;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #808080;
+  background-color: #FFFFFF;
+  border: 2px solid #D6D6D6;
+  border-radius: 7px;
+  padding-left: 1rem;
+  outline: none;
+}
+
+.inputLabel {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.inputLabel svg {
+  width: 1.5rem;
+  margin-right: 10px;
+  color: #808080;
+}
+
+
+.messageBox {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+  position: relative;
+  width: 100%;
+}
+
+.messageBox svg {
+  width: 1.1rem;
+  margin-right: 10px;
+  color: #808080;
+}
+
+.messageBox textarea {
+  border: 2px solid #D6D6D6;
+  outline: none;
+  resize: none;
+  border-radius: 5px;
+  height: 8rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #808080;
+  padding: 0.7rem;
+}
+
+.rightSide {
+  width: 37%;
+  margin-top: 0;
+  position: absolute;
+  right: 0rem;
+  top: 11rem;
+}
+
+.rightSide img {
+  width: 460px;
+  height: 411px;
+}
+
+.khalti img {
+  width: 170px;
+  height: 80px;
+  margin-bottom: 20px;
+}
+
+.rightSide .companyInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 2rem;
+  margin-top: 2rem;
+}
+
+.companyInfo div {
+  border: 2px solid #EF481E;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
+  width: 2rem;
+  height: 2rem;
+}
+
+.companyInfo p {
+  color: #808080;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.companyInfo svg {
+  color: #EF481E;
+}
+
+.socialMediaIcons {
+  color: #ffffff;
+  display: flex;
+  margin-left: 2rem;
+}
+
+.socialMediaIcons div {
+  background-color: #144580;
+  margin-right: 1rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+}
+
+.formError {
+  color: #db0b0b;
+  font-weight: 500;
+  margin-left: 0.5rem;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 698px) {
+  .appointment {
+      flex-direction: column-reverse;
+      padding: 0rem 2rem;
+  }
+
+  .appointment form {
+      margin-top: 1rem;
+  }
+
+  .main {
+      padding: 0rem
+  }
+
+  header {
+      padding: 1rem 1.5rem;
+  }
+
+  .main .mainHeader {
+      font-size: 1.6rem;
+  }
+
+  .main .mainP {
+      font-size: 1.3rem;
+      font-weight: 500;
+  }
+
+  .select {
+      width: 20rem;
+  }
+
+  button:nth-of-type(1) {
+      margin-left: unset;
+  }
+
+  .buttons {
+      align-items: flex-start;
+      width: 100%;
+  }
+
+  .doctorCard {
+      width: 28.25rem;
+      height: 37.6rem;
+      border: 1px solid #D6D6D6;
+      border-radius: 10px;
+      margin: 1rem auto;
+      overflow: hidden;
+  }
+
+  .form {
+      width: 100%;
+  }
+
+  .select {
+      width: 100%
+  }
+
+  .inputLabel {
+      width: 100%;
+  }
+
+  .input {
+      width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1200) {
+  .rightSide {
+      position: relative;
+      display: none;
+  }
+
+  .rightSide img {
+      display: none;
+  }
+
+  .appointment {
+      flex-direction: column-reverse;
+      padding-top: 0rem;
+
+  }
+
+  .appointment .form {
+      flex-direction: column;
+      width: 97%;
+  }
+
+  .select {
+      width: 100%
+  }
+
+  .inputLabel {
+      width: 100%;
+  }
+}
+
+.rating {
+  margin-top: 10px;
+}
+
+/* .rating i {
+  font-size: 24px;
+  color: #ddd;
+  margin-right: 5px;
+}
+
+.rating i.active {
+  color: #ffcc00;
+} */
+
+
+@media (max-width: 1350px) {
+  .form{
+      grid-template-columns: repeat(1,1fr);
+  }
+}

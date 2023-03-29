@@ -288,3 +288,12 @@
     margin-bottom: 3rem;
   }
 }
+
+.add-minus-quantity i{
+  cursor: pointer;
+  font-size: 1.4rem;
+}
+
+.remove-item i{
+  cursor: pointer;
+}

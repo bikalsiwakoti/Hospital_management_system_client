@@ -5,6 +5,8 @@ import Navbar from '../../Components/navbar/Navbar'
 import { fetchData } from '../../Redux/Slices.js/ProductSlice'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { ToastContainer, toast } from 'react-toastify';
+
 
 function Product() {
   const dispatch = useDispatch()
@@ -77,6 +79,7 @@ function Product() {
 
 
 
+      <ToastContainer/>
       <Footer />
     </>
   )

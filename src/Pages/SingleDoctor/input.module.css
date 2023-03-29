@@ -1,0 +1,71 @@
+body{
+  font-size: 100% !important;
+}
+
+.inputLabel {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.inputLabel svg {
+  color: #808080;
+  height: 20px;
+  width: 1.5rem;
+  height: 1.5em;
+  margin-right: 15px
+}
+
+.label{
+  color: #808080;
+  font-size: 1.5rem;
+  padding-bottom: 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.7px;
+}
+
+.star{
+  color: #C63535;
+}
+
+.input{
+  height: 50px;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #808080;
+  background-color: #FFFFFF;
+  border: 2px solid #D6D6D6;
+  border-radius: 7px;
+  padding-left: 1.2rem;
+  outline: none;
+}
+
+.formError{
+  color: #db0b0b;
+  position: absolute;
+  font-weight: 500;
+  margin-left: 0.8rem;
+  font-size: 1.2rem;
+  bottom: -40px;
+}
+
+@media (max-width: 698px) {
+  .input{
+      width: 100%;
+  }
+  .inputLabel {
+      width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .input{
+      width: 100%;
+  }
+  .inputLabel {
+      width: 100%;
+  }
+}

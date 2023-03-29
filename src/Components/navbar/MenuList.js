@@ -14,9 +14,5 @@ export const MenuList = [
   {
     title: "About Us",
     url: "/about-us",
-  },
-  {
-    title: "Sign In",
-    url: "/",
-  },
+  }
 ];

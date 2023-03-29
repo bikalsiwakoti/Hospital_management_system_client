@@ -72,6 +72,18 @@ nav {
   transition: all 0.3s ease-in-out;
 }
 
+.loginBtnNav {
+  margin: 0 1rem;
+  display: flex;
+  width: 12%;
+  justify-content: space-between;
+}
+
+.loginBtnNav button{
+  padding: 1rem 2.5rem;
+}
+
+
 @media screen and (max-width: 800px) {
   .logo {
     font-size: 20px;
@@ -80,6 +92,41 @@ nav {
     font-size: 14px;
     margin-left: 10px;
   }
+  .loginBtnNav{
+    display: none;
+  }
+}
+.userImg img{
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+
+.userCart i {
+  font-size: 3.5rem;
+  color: #000000;
+  cursor: pointer;
+}
+
+.userImg i {
+  font-size: 2rem;
+  color: #000000;
+}
+
+.userData {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  align-items: center;
+}
+.userImg {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+}
+.dropdownForUser{
+  background-color: red;
 }
 
 @media screen and (max-width: 600px) {

@@ -31,7 +31,7 @@ const LoginPage = () => {
       const res = await axios.post('/user/loginUser', loginData)
       localStorage.setItem('loginDetails', JSON.stringify(res?.data))
       dispatch(LoginSuccess(res?.data))
-      navigate('/')
+      navigate('/home')
       
     } catch (error) {
       console.log(error)

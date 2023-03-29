@@ -1,9 +1,35 @@
+import axios from 'axios'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './ProductCard.css'
+import { addCartData } from '../../Redux/Slices.js/CartSlice'
+import { useDispatch } from 'react-redux'
 
-function ProductCard({data}) {
+function ProductCard({ data }) {
   const [clicked, setClicked] = useState(false)
+  const dispatch = useDispatch()
+
+  const handleAddToCart = async () => {
+    if (!clicked) {
+      await axios.post('/cart/addcart', {
+        product_name: data.name,
+        product_price: data.price,
+        quantity: 1,
+        total_price: data.price * 1,
+        img: data.img,
+        genre: data.genre,
+      })
+      setClicked(!clicked)
+      dispatch(addCartData({
+        product_name: data.name,
+        product_price: data.price,
+        quantity: 1,
+        total_price: data.price * 1,
+        img: data.img,
+        genre: data.genre,
+      }))
+    }
+  }
   return (
     <>
       <div className='productCard'>
@@ -19,7 +45,7 @@ function ProductCard({data}) {
           <hr />
         </Link>
         <div className='details'>
-          <div className={clicked ? 'iconClicked' : 'cartIcon'} onClick={() => setClicked(!clicked)}>
+          <div className={clicked ? 'iconClicked' : 'cartIcon'} onClick={handleAddToCart}>
             <i class='bx bx-cart' ></i>
           </div>
           <div className='price'>

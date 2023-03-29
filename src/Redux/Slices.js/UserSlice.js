@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   isLoading: false,
-  user: null,
+  user: JSON.parse(localStorage.getItem('loginDetails')) || null,
   error: null
 }
 
@@ -11,36 +11,24 @@ export const UserSlice = createSlice({
   initialState,
   reducers: {
     LoginStart: (state) => {
-      return {
-        ...state,
-        isLoading: true,
-        user: null,
-        error: null
-      }
+        state.isLoading= true
+        state.user= null
+        state.error= null
     },
     LoginSuccess: (state, action) => {
-      return {
-        ...state,
-        isLoading: false,
-        user: action.payload,
-        error: null
-      }
+        state.isLoading= false
+        state.user= action.payload
+        state.error= null
     },
     LoginFailed: (state, action) => {
-      return {
-        ...state,
-        isLoading: false,
-        user: null,
-        error: action.payload
-      }
+        state.isLoading= false
+        state.user= null
+        state.error= action.payload 
     },
-    Logout: (state, action) => {
-      return {
-        ...state,
-        isLoading: false,
-        user: null,
-        error: null
-      }
+    Logout: (state) => {
+        state.isLoading= false
+        state.user= null
+        state.error= null
     }
   },
 })

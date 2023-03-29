@@ -2,8 +2,18 @@ import './Doctor.css'
 import Footer from '../../Components/footer/Footer'
 import Navbar from '../../Components/navbar/Navbar'
 import DoctorCard from '../../Components/doctorCard.js/DoctorCard'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
 
 function Doctor() {
+  const [doctorData, setDoctorData] = useState([])
+
+  useEffect(() => {
+    axios.get('/doctor/getAllDoctor').then(res => setDoctorData(res.data)).catch(err => console.log(err))
+  }, [])
+
+  console.log(doctorData)
+
   return (
     <>
       <Navbar />
@@ -36,18 +46,11 @@ function Doctor() {
         </div>
 
         <div className='doctorCards'>
-          <DoctorCard />
-          <DoctorCard />
-          <DoctorCard />
-          <DoctorCard />
-          <DoctorCard />
-          <DoctorCard />
-          <DoctorCard />
-          <DoctorCard />
-          <DoctorCard />
-          <DoctorCard />
-          <DoctorCard />
-          <DoctorCard />
+          {
+            doctorData?.map(doctor => {
+             return <DoctorCard doctor={doctor}/>
+            })
+          }
         </div>
 
       </div>
