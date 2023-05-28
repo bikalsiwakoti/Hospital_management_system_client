@@ -10,13 +10,14 @@ import { Navigation } from "swiper";
 import ProductCard from '.././productCard/ProductCard'
 
 import "swiper/css/navigation";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-export default function ProductSlider() {
-    const [clicked, setClicked] = useState(false)
-    const array = [1,2,3,4,5,6,7,8,9,10]
+export default function ProductSlider({ product }) {
+    const navigate = useNavigate()
 
-
+    const handleProductClick = () => {
+        navigate('/doctors')
+    }
     return (
         <>
             <div className="total-slider">
@@ -27,7 +28,7 @@ export default function ProductSlider() {
                             <p className="headerSecondTopic">Buy products related to medical from medcare.</p>
                         </div>
                         <div className="viewBtn">
-                            <button className="btn btn-lg py-3 btn-outline-dark"><span>View All Products</span> <i class="fa-solid fa-arrow-right"></i></button>
+                            <button className="btn btn-lg py-3 btn-outline-dark"><span onClick={handleProductClick}>View All Products</span> <i class="fa-solid fa-arrow-right"></i></button>
                         </div>
                     </div>
                     <Swiper
@@ -48,7 +49,7 @@ export default function ProductSlider() {
                                 slidesPerView: 3,
                                 spaceBetween: 40,
                             },
-                            1000:{
+                            1000: {
                                 slidesPerView: 4,
                                 spaceBetween: 40,
                             },
@@ -58,27 +59,26 @@ export default function ProductSlider() {
                             },
                         }}
                     >
-                        {array.map(item => (
-                            <SwiperSlide key={item}>
+                        {product?.data?.map(item => (
+                            <SwiperSlide key={item.id}>
                                 <div className='productSliderCard'>
-                                    <Link to='/product/123' style={{ textDecoration: 'none', color: 'initial' }}>
-                                        <img src='https://images.theconversation.com/files/369567/original/file-20201116-23-18wlnv.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop'></img>
+                                    <Link to={`/product/${item.id}`} style={{ textDecoration: 'none', color: 'initial' }}>
+                                        <img src={`http://localhost:5000/images/${item.img}`}></img>
                                         <div className='info'>
                                             <div className='productInfo'>
-                                                <h1>Medicine</h1>
+                                                <h1>{item.name}</h1>
                                                 <span></span>
                                             </div>
-                                            <p>description</p>
+                                            <p>{item.genre}</p>
                                         </div>
                                         <hr />
                                     </Link>
                                     <div className='details'>
-                                        <div className={clicked ? 'iconClicked' : 'cartIcon'} onClick={() => setClicked(!clicked)}>
+                                        <div>
                                             <i class='bx bx-cart' ></i>
                                         </div>
                                         <div className='price'>
-                                            <span>PRICE</span>
-                                            <h2>NRS. 200</h2>
+                                            <h2>NRS. {item.price}</h2>
                                         </div>
                                     </div>
                                 </div>

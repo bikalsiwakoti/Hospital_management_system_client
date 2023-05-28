@@ -13,6 +13,7 @@ import axios from 'axios';
 import mykey from "../../Components/khaliti/KhaltiKey";
 import { ToastContainer, toast } from 'react-toastify';
 import KhaltiCheckout from 'khalti-checkout-web'
+import { useNavigate } from 'react-router-dom';
 
 
 const schema = Yup.object({
@@ -86,7 +87,7 @@ function SingleDoctor() {
 
   // let checkOut = new KhaltiCheckout(config)
 
-
+   const navigate = useNavigate()
   const formik = useFormik({
     initialValues: {
       firstName: '',
@@ -107,10 +108,12 @@ function SingleDoctor() {
       try {
         const res = await axios.post('/patient/addDetails', data)
         console.log(res.data)
-        toast.success('Succefully placed order', {
+        toast.success('Succefully booked appointment', {
           position: "top-right",
           theme: "colored"
         })
+        navigate('/doctors')
+
       } catch (error) {
         console.log(error)
       }

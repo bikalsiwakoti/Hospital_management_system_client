@@ -3,12 +3,16 @@ import Footer from '../../Components/footer/Footer'
 import Navbar from '../../Components/navbar/Navbar'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addCartData } from '../../Redux/Slices.js/CartSlice';
+import { useNavigate } from 'react-router-dom';
 
 function SingleProduct() {
   const [count, setCount] = useState(1);
   const [oneProduct, setOneProduct] = useState({});
+  const user = useSelector(state => state?.user)
+  const navigate = useNavigate()
+
   const dispatch = useDispatch()
 
   const id = window.location.pathname.split('/')[2]
@@ -24,22 +28,28 @@ function SingleProduct() {
 
 
   const handleAddToCart = async () => {
-    await axios.post('/cart/addcart', {
-      product_name: oneProduct.name,
-      product_price: oneProduct.price,
-      quantity: count,
-      total_price: oneProduct.price * count,
-      img: oneProduct.img,
-      genre: oneProduct.genre,
-    })
-    dispatch(addCartData({
-      product_name: oneProduct.name,
-      product_price: oneProduct.price,
-      quantity: count,
-      total_price: oneProduct.price * count,
-      img: oneProduct.img,
-      genre: oneProduct.genre,
-    }))
+    if (user?.user) {
+
+      await axios.post('/cart/addcart', {
+        product_name: oneProduct.name,
+        product_price: oneProduct.price,
+        quantity: count,
+        total_price: oneProduct.price * count,
+        img: oneProduct.img,
+        genre: oneProduct.genre,
+      })
+      dispatch(addCartData({
+        product_name: oneProduct.name,
+        product_price: oneProduct.price,
+        quantity: count,
+        total_price: oneProduct.price * count,
+        img: oneProduct.img,
+        genre: oneProduct.genre,
+      }))
+    } else {
+      navigate('/login')
+    }
+
   }
 
   return (

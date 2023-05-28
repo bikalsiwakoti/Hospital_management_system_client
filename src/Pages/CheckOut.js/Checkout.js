@@ -73,7 +73,7 @@ function Checkout() {
         })
         await axios.delete('/cart/deleteAllCart')
         dispatch(deleteAllCart())
-        // navigate('/products')
+        navigate('/products')
         toast.success('Succefully placed order', {
           position: "top-right",
           theme: "colored"
@@ -113,7 +113,7 @@ function Checkout() {
           position: "top-right",
           theme: "colored"
         })
-        // navigate('/products')
+        navigate('/products')
 
       }
 

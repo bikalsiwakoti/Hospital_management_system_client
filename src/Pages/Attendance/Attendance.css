@@ -1,0 +1,74 @@
+.attendanceContainer{
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.attendance-card {
+  width: 250px;
+  height: 300px;
+  background: #349eff;
+  border-radius: 15px;
+  box-shadow: 1px 5px 60px 0px #100a886b;
+ }
+ 
+ .attendance-card .attendance-card-border-top {
+  width: 60%;
+  height: 3%;
+  background: #62b4ff;
+  margin: auto;
+  border-radius: 0px 0px 15px 15px;
+ }
+ 
+ .attendance-card span {
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  display: block;
+  padding-top: 10px;
+  font-size: 16px;
+ }
+ 
+ .attendance-card .job {
+  font-weight: 400;
+  color: white;
+  display: block;
+  text-align: center;
+  padding-top: 3px;
+  font-size: 12px;
+ }
+ 
+ .attendance-card .img {
+  width: 110px;
+  height: 100px;
+  background: #62b4ff;
+  border-radius: 15px;
+  margin: auto;
+  margin-top: 25px;
+ }
+ .attendance-card .img img{
+  width: 100%;
+  height: 100%;
+  
+
+ }
+ .attendance-card button {
+  padding: 12px 32px;
+  display: block;
+  font-size: 16px;
+  margin: auto;
+  border-radius: 8px;
+  border: none;
+  margin-top: 15px;
+  background: #62b4ff;
+  color: white;
+  font-weight: 600;
+ }
+ 
+ .attendance-card button:hover {
+  background: #62b4ff;
+ }
+
+ 

@@ -8,11 +8,16 @@ import axios from 'axios'
 function Doctor() {
   const [doctorData, setDoctorData] = useState([])
 
+const handleChng=(e)=>{
+  axios.get(`/doctor/getAllDoctor?name=${e.target.value}`).then(res => setDoctorData(res.data)).catch(err => console.log(err))
+}
+
+const srchname = window.location.pathname.split('/')[2]
+
   useEffect(() => {
-    axios.get('/doctor/getAllDoctor').then(res => setDoctorData(res.data)).catch(err => console.log(err))
+    axios.get(`/doctor/getAllDoctor?name=${srchname===undefined ? "" : srchname}`).then(res => setDoctorData(res.data)).catch(err => console.log(err))
   }, [])
 
-  console.log(doctorData)
 
   return (
     <>
@@ -26,7 +31,7 @@ function Doctor() {
             <div className='doctor-left'>
               <div class="col-md-6 w-100">
                 <div class="input-group leftInput">
-                  <input type="text" class="form-control form-control-danger" placeholder="Find Doctor..."></input>
+                  <input type="text" class="form-control form-control-danger" placeholder="Find Doctor..." onChange={handleChng}></input>
                   <button class="btn btn-danger srchBtn" type="button"><i class='bx bx-search-alt-2'></i></button>
                 </div>
               </div>
@@ -38,9 +43,9 @@ function Doctor() {
             </div>
             <select>
               <option selected>Select an option</option>
-              <option value="1">Option 1</option>
-              <option value="2">Option 2</option>
-              <option value="3">Option 3</option>
+              <option value="1">Nose</option>
+              <option value="2">Eye</option>
+              <option value="3">Toungue</option>
             </select>
           </div>
         </div>

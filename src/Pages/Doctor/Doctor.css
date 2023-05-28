@@ -7,7 +7,6 @@
 .doctorCards {
   display: flex;
   width: 90%;
-  justify-content: space-between;
   flex-wrap: wrap;
   margin: auto;
 }

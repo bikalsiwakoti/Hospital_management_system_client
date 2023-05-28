@@ -40,7 +40,7 @@ function ProductCard({ data }) {
               <h1>{data.name}</h1>
               <span></span>
             </div>
-            <p>Desciption</p>
+            <p>{data.genre}</p>
           </div>
           <hr />
         </Link>
@@ -49,7 +49,7 @@ function ProductCard({ data }) {
             <i class='bx bx-cart' ></i>
           </div>
           <div className='price'>
-            <span>PRICE</span>
+            <span></span>
             <h2>NRS. {data.price}</h2>
           </div>
         </div>

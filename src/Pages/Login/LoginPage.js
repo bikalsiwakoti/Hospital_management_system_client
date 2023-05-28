@@ -6,6 +6,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import Footer from '../../Components/footer/Footer'
 import Navbar from '../../Components/navbar/Navbar'
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+
 import { useSelector, useDispatch } from 'react-redux'
 import {LoginStart, LoginSuccess, LoginFailed, Logout} from '../.././Redux/Slices.js/UserSlice'
 
@@ -31,11 +33,18 @@ const LoginPage = () => {
       const res = await axios.post('/user/loginUser', loginData)
       localStorage.setItem('loginDetails', JSON.stringify(res?.data))
       dispatch(LoginSuccess(res?.data))
-      navigate('/home')
+      navigate('/')
+      toast.success('Successfully Logged In', {
+        position: "top-right",
+        theme: "colored"
+      })
       
     } catch (error) {
-      console.log(error)
       dispatch(LoginFailed(error?.response?.data?.message))
+      toast.error(error?.response?.data?.message, {
+        position: "top-right",
+        theme: "colored"
+      })
     }
   }
   console.log(user)

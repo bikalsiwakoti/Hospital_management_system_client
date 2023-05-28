@@ -8,8 +8,8 @@ const initialState = {
 }
 
 export const fetchData = createAsyncThunk(
-  'product/fetchData', async () => {
-    const res = await axios.get('/product/getAllProduct')
+  'product/fetchData', async (data) => {
+    const res = await axios.get(`/product/getAllProduct?srch=${data.srch}`)
     return res.data
   }
 )
@@ -39,17 +39,17 @@ export const productSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(fetchData.pending, (state) => {
-        state.loading = true
-        state.data = []
-        state.error = null
+      state.loading = true
+      state.data = []
+      state.error = null
     }).addCase(fetchData.fulfilled, (state, action) => {
-        state.loading = false
-        state.data = action.payload
-        state.error = null
+      state.loading = false
+      state.data = action.payload
+      state.error = null
     }).addCase(fetchData.rejected, (state, action) => {
-        state.loading = false
-        state.data = []
-        state.error = action.payload
+      state.loading = false
+      state.data = []
+      state.error = action.payload
     })
   }
 })

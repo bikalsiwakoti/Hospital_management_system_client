@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import './register.css'
 import loginPic from '../.././img/loginPic.jpg'
 import { Link, useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
 
 import Footer from '../../Components/footer/Footer'
 import Navbar from '../../Components/navbar/Navbar'
@@ -10,7 +11,7 @@ import axios from 'axios'
 
 const RegisterPage = () => {
   const navigate = useNavigate()
-  const [error, setError]= useState()
+  const [error, setError] = useState()
   const [registerData, setRegisterData] = useState({
     username: "",
     email: "",
@@ -22,14 +23,29 @@ const RegisterPage = () => {
     setRegisterData(prev => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
-  const handleRegister = async(e) => {
+  const handleRegister = async (e) => {
     e.preventDefault()
-    try {
-      await axios.post('/user/registerUser', registerData)
-      navigate('/')
-      
-    } catch (error) {
-      setError(error.response.data)
+    if (registerData.username === "" || registerData.email === "" || registerData.password === "" || registerData.confirm_password === "") {
+      toast.error("Fields Cannot Be Empty !", {
+        position: "top-right",
+        theme: "colored"
+      });
+    } else {
+      try {
+        await axios.post('/user/registerUser', registerData)
+        navigate('/')
+        toast.success('Successfully Registered', {
+          position: "top-right",
+          theme: "colored"
+        })
+
+      } catch (error) {
+        setError(error.response.data)
+        toast.error(error.response.data, {
+          position: "top-right",
+          theme: "colored"
+        })
+      }
     }
   }
 
@@ -64,16 +80,6 @@ const RegisterPage = () => {
           <form onSubmit={handleRegister}>
             <div class="dbl-field">
 
-              {/* <div class="flex-input">
-                  <div class="field">
-                    <input type="text" placeholder="First Name"></input>
-                  </div>
-                  <div class="field">
-                    <input type="text" id="lastName" placeholder="Last Name"></input>
-                  </div>
-                </div> */}
-
-
               <div class="field">
                 <input onChange={handleChange} type="text" name='username' placeholder="Username"></input>
               </div>
@@ -98,7 +104,7 @@ const RegisterPage = () => {
             </div>
             <div className='login-buttons'>
               <button type="submit" class="btn btn-danger">Signup</button>
-              <Link to={'/'}><button type="button" class="btn btn-outline-danger">Login</button></Link>
+              <Link to={'/login'}><button type="button" class="btn btn-outline-danger">Login</button></Link>
             </div>
           </form>
 

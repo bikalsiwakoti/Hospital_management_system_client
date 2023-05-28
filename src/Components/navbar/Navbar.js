@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { MenuList } from "./MenuList";
 import "./navbar.css";
 import { useSelector, useDispatch } from 'react-redux'
@@ -12,6 +12,7 @@ function Navbar() {
   const user = useSelector(state => state?.user)
   const cart = useSelector(state => state?.cart)
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const menuList = MenuList.map(({ url, title }, index) => {
     return (
@@ -30,6 +31,7 @@ function Navbar() {
   const handleLogout = () => {
     dispatch(Logout())
   }
+  console.log(user.user)
   return (
     <nav>
       <div className="logo">
@@ -40,7 +42,7 @@ function Navbar() {
       </div>
       <ul className={clicked ? "menu-list" : "menu-list close"}>{menuList}</ul>
       {!user?.user ? <div className="loginBtnNav">
-        <Link to={'/'}><button type="button" class="btn btn-outline-danger">Login</button></Link>
+        <Link to={'/login'}><button type="button" class="btn btn-outline-danger">Login</button></Link>
       </div> :
         <div className="userData">
           <div className="userCart">
@@ -62,6 +64,8 @@ function Navbar() {
             </Dropdown.Toggle>
 
             <Dropdown.Menu style={{ padding: "5px 10px" }}>
+              {user?.user?.role === "staff" && <Dropdown.Item style={{ fontSize: "15px" }} onClick={()=> navigate('/attendance') }>Attendance</Dropdown.Item>}
+              <Dropdown.Item style={{ fontSize: "15px" }} onClick={()=> navigate('/myorders') }>My Orders</Dropdown.Item>
               <Dropdown.Item style={{ fontSize: "15px" }} onClick={handleLogout}>Log Out</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>

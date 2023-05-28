@@ -12,11 +12,14 @@ function Product() {
   const dispatch = useDispatch()
   const productData = useSelector(state => state.product)
 
+  const handleChange = (e) => {
+    dispatch(fetchData({ srch: e.target.value }))
+  }
+
   useEffect(() => {
-    dispatch(fetchData())
+    dispatch(fetchData({ srch: "" }))
   }, [])
 
-  console.log(productData.data)
   return (
     <>
       <Navbar />
@@ -29,7 +32,7 @@ function Product() {
             <div className='product-left'>
               <div class="col-md-6 w-100">
                 <div class="input-group leftInput">
-                  <input type="text" class="form-control form-control-danger productSrch" placeholder="Find Product..."></input>
+                  <input type="text" onChange={handleChange} class="form-control form-control-danger productSrch" placeholder="Find Product..."></input>
                   <button class="btn btn-danger srchBtn" type="button"><i class='bx bx-search-alt-2'></i></button>
                 </div>
               </div>
@@ -49,8 +52,8 @@ function Product() {
         </div>
 
         <div className='productsCard'>
-          {productData.data.map((item,i)=>{
-            return <ProductCard data={item}/>
+          {productData.data.map((item, i) => {
+            return <ProductCard data={item} />
           })}
         </div>
 
@@ -79,7 +82,7 @@ function Product() {
 
 
 
-      <ToastContainer/>
+      <ToastContainer />
       <Footer />
     </>
   )
